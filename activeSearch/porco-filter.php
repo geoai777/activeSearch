@@ -49,6 +49,9 @@ function porco_search(){
 const srcInput = document.getElementById("srcInput");
 
 let timeout = null;
+/* /!\ IMPORTANT! delay value is used to prevent rapid search requests 
+* i.e. we let user 0.5 sec to finish typing before sending request.
+*/
 let delay = 500;
 var updateThisElement = document.getElementById("resWindow");
 
@@ -117,6 +120,11 @@ function ajaxSearch(srcString){
 }
 
 function prSearch(){
+    /*
+     * API interface function. All data here is provided just to test asynchrous search works
+     * Here API calls should be implemented. 
+     * $_POST['srcString'] should be used to get/filter API call results.
+     */
     if ($_POST['srcString']){
         $db_arr = [
             "id1023" => [
